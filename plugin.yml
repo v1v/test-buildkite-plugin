@@ -1,0 +1,9 @@
+name: test
+description: test plugin
+author: https://github.com/v1c
+public: true
+requirements:
+  - bash
+  - buildkite-agent
+configuration:
+  additionalProperties: false
